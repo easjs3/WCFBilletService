@@ -18,9 +18,9 @@ namespace WCFBilletService
         //    return string.Format("You entered: {0}", value);
         //}
 
+        //mine forskellige objs 
         private Bil BilStoreBælt = new Bil(false);
         private MC MCStoreBælt = new MC(false);
-
         private Bil BilØresund = new Bil(true);
         private MC MCØresund = new MC(true);
 
@@ -35,7 +35,7 @@ namespace WCFBilletService
             return MCStoreBælt.Pris();
         }
 
-        
+
         public int BilPrisUdenRabatØresund()
         {
             return BilØresund.Pris();
