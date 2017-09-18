@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using BilletLib;
 
 namespace WCFBilletService
 {
@@ -16,5 +17,34 @@ namespace WCFBilletService
         //{
         //    return string.Format("You entered: {0}", value);
         //}
+
+        private Bil BilStoreBælt = new Bil(false);
+        private MC MCStoreBælt = new MC(false);
+
+        private Bil BilØresund = new Bil(true);
+        private MC MCØresund = new MC(true);
+
+        public int BilPrisUdenRabatStorebælt()
+        {
+            return BilStoreBælt.Pris();
+        }
+
+
+        public int MCPrisUdenRabatStorebælt()
+        {
+            return MCStoreBælt.Pris();
+        }
+
+        
+        public int BilPrisUdenRabatØresund()
+        {
+            return BilØresund.Pris();
+        }
+
+
+        public int MCPrisUdenRabatØresund()
+        {
+            return MCØresund.Pris();
+        }
     }
 }

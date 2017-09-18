@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using BilletLib;
 
 namespace WCFBilletService
 {
@@ -16,6 +17,21 @@ namespace WCFBilletService
         //[OperationContract]
         //string GetData(int value);
         // TODO: Add your service operations here
+        [OperationContract]
+        int MCPrisUdenRabatStorebælt();
+
+
+        [OperationContract]
+        int BilPrisUdenRabatStorebælt();
+
+
+        [OperationContract]
+        int BilPrisUdenRabatØresund();
+
+
+        [OperationContract]
+        int MCPrisUdenRabatØresund();
+
     }
 
 
