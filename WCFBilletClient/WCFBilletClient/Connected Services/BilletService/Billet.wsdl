@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Billet" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IBillet_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="MCPrisUdenRabatStorebælt">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MCPrisUdenRabatStorebæltResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="MCPrisUdenRabatStorebæltResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BilPrisUdenRabatStorebælt">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BilPrisUdenRabatStorebæltResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="BilPrisUdenRabatStorebæltResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BilPrisUdenRabatØresund">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BilPrisUdenRabatØresundResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="BilPrisUdenRabatØresundResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MCPrisUdenRabatØresund">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MCPrisUdenRabatØresundResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="MCPrisUdenRabatØresundResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IBillet_MCPrisUdenRabatStorebælt_InputMessage">
+    <wsdl:part name="parameters" element="tns:MCPrisUdenRabatStorebælt" />
+  </wsdl:message>
+  <wsdl:message name="IBillet_MCPrisUdenRabatStorebælt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MCPrisUdenRabatStorebæltResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillet_BilPrisUdenRabatStorebælt_InputMessage">
+    <wsdl:part name="parameters" element="tns:BilPrisUdenRabatStorebælt" />
+  </wsdl:message>
+  <wsdl:message name="IBillet_BilPrisUdenRabatStorebælt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BilPrisUdenRabatStorebæltResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillet_BilPrisUdenRabatØresund_InputMessage">
+    <wsdl:part name="parameters" element="tns:BilPrisUdenRabatØresund" />
+  </wsdl:message>
+  <wsdl:message name="IBillet_BilPrisUdenRabatØresund_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BilPrisUdenRabatØresundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillet_MCPrisUdenRabatØresund_InputMessage">
+    <wsdl:part name="parameters" element="tns:MCPrisUdenRabatØresund" />
+  </wsdl:message>
+  <wsdl:message name="IBillet_MCPrisUdenRabatØresund_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MCPrisUdenRabatØresundResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBillet">
+    <wsdl:operation name="MCPrisUdenRabatStorebælt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillet/MCPrisUdenRabatStorebælt" message="tns:IBillet_MCPrisUdenRabatStorebælt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillet/MCPrisUdenRabatStorebæltResponse" message="tns:IBillet_MCPrisUdenRabatStorebælt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BilPrisUdenRabatStorebælt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillet/BilPrisUdenRabatStorebælt" message="tns:IBillet_BilPrisUdenRabatStorebælt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillet/BilPrisUdenRabatStorebæltResponse" message="tns:IBillet_BilPrisUdenRabatStorebælt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BilPrisUdenRabatØresund">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillet/BilPrisUdenRabatØresund" message="tns:IBillet_BilPrisUdenRabatØresund_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillet/BilPrisUdenRabatØresundResponse" message="tns:IBillet_BilPrisUdenRabatØresund_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MCPrisUdenRabatØresund">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillet/MCPrisUdenRabatØresund" message="tns:IBillet_MCPrisUdenRabatØresund_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillet/MCPrisUdenRabatØresundResponse" message="tns:IBillet_MCPrisUdenRabatØresund_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBillet" type="tns:IBillet">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MCPrisUdenRabatStorebælt">
+      <soap:operation soapAction="http://tempuri.org/IBillet/MCPrisUdenRabatStorebælt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BilPrisUdenRabatStorebælt">
+      <soap:operation soapAction="http://tempuri.org/IBillet/BilPrisUdenRabatStorebælt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BilPrisUdenRabatØresund">
+      <soap:operation soapAction="http://tempuri.org/IBillet/BilPrisUdenRabatØresund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MCPrisUdenRabatØresund">
+      <soap:operation soapAction="http://tempuri.org/IBillet/MCPrisUdenRabatØresund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IBillet" type="tns:IBillet">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IBillet_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MCPrisUdenRabatStorebælt">
+      <soap:operation soapAction="http://tempuri.org/IBillet/MCPrisUdenRabatStorebælt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BilPrisUdenRabatStorebælt">
+      <soap:operation soapAction="http://tempuri.org/IBillet/BilPrisUdenRabatStorebælt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BilPrisUdenRabatØresund">
+      <soap:operation soapAction="http://tempuri.org/IBillet/BilPrisUdenRabatØresund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MCPrisUdenRabatØresund">
+      <soap:operation soapAction="http://tempuri.org/IBillet/MCPrisUdenRabatØresund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Billet">
+    <wsdl:port name="BasicHttpBinding_IBillet" binding="tns:BasicHttpBinding_IBillet">
+      <soap:address location="http://billetservice.azurewebsites.net/Billet.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IBillet" binding="tns:BasicHttpsBinding_IBillet">
+      <soap:address location="https://billetservice.azurewebsites.net/Billet.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
